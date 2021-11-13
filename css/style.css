@@ -1,0 +1,791 @@
+:root {
+  --main-color: #ff9e67;
+  --black-color: #000;
+  --heading-color: #444;
+  --description-color: #777;
+}
+nav {
+  padding: 2rem 0;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  position: fixed;
+  min-width: 100%;
+  z-index: 1000;
+  transition-duration: 0.6s;
+}
+nav ul {
+  gap: 3rem;
+}
+.logo {
+  margin-right: auto;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.logo i {
+  font-size: 3rem;
+  color: black;
+  display: none;
+  cursor: pointer;
+}
+nav ul a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--black-color);
+  position: relative;
+  transition: color 0.4s;
+  overflow: hidden;
+}
+nav ul li:not(:last-child) a::before {
+  content: attr(data-text);
+  color: var(--main-color);
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition-duration: 0.4s;
+  white-space: nowrap;
+}
+nav ul li:not(:last-child):hover a {
+  color: transparent;
+}
+nav ul li:not(:last-child):hover a::before {
+  width: 100%;
+}
+nav ul li:last-of-type {
+  margin-left: auto;
+}
+nav ul li:last-of-type a {
+  background-color: var(--black-color);
+  color: white;
+  padding: 1.5rem 2.5rem;
+  display: block;
+  border-radius: 0.6rem;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 300;
+  position: relative;
+  transition: background-color 0.5s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+nav ul li:last-of-type a:hover {
+  background-color: transparent;
+}
+nav ul li:last-of-type a::before {
+  content: "contact us";
+  position: absolute;
+  background-color: var(--main-color);
+  color: white;
+  display: block;
+  border-radius: 0.6rem;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 300;
+  white-space: nowrap;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition-duration: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+nav ul li:last-of-type:hover a::before {
+  left: 0;
+}
+/****************     start header     ******************/
+header.flex {
+  padding-top: 17rem;
+  gap: 9%;
+}
+header .box-1 {
+  flex: 1;
+  max-width: 100%;
+}
+header h1 {
+  font-size: 8rem;
+  line-height: 1;
+  margin-top: 1.2rem;
+  white-space: nowrap;
+}
+header h1 span:first-child {
+  color: var(--main-color);
+  font-size: 2.2rem;
+}
+header h1 span:last-child {
+  color: var(--main-color);
+  margin: 1rem 0;
+  display: block;
+}
+header .box-1 > p:first-of-type {
+  font-size: 1.6rem;
+  color: var(--description-color);
+  margin: 4rem 0;
+  letter-spacing: 0.6px;
+  line-height: 1.3;
+  padding-right: 3rem;
+}
+header button {
+  margin-bottom: 7rem;
+}
+.started {
+  font-size: 1.8rem;
+  background-color: var(--main-color);
+  color: white;
+  padding: 1.8rem 3rem;
+  border-radius: 0.6rem;
+  display: block;
+}
+header .box-1 > :last-child .flex {
+  justify-content: unset;
+  gap: 1rem;
+}
+header .box-1 > :last-child {
+  width: fit-content;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 5rem;
+}
+header .box-1 > :last-child i {
+  font-size: 4.6rem;
+}
+header .box-1 > :last-child p {
+  font-size: 1.7rem;
+  color: var(--description-color);
+  font-weight: 500;
+}
+header .box-1 > :last-child span {
+  font-size: 2.2rem;
+  font-weight: bolder;
+  color: var(--heading-color);
+}
+
+header .box-2 {
+  flex: 1;
+  align-self: flex-start;
+}
+header .box-2 > img {
+  width: 100%;
+  border-radius: 2rem;
+}
+header .box-2 .box {
+  width: 72%;
+  background-color: white;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  position: relative;
+  top: -4.6rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+}
+header .box-2 .cnt {
+  background-color: white;
+  width: fit-content;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+header .box-2 .cnt p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--description-color);
+}
+header .box-2 .cnt span {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  letter-spacing: 0.6px;
+  color: var(--black-color);
+  margin-right: 2rem;
+  position: relative;
+}
+header .box-2 .cnt span::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--main-color);
+  position: absolute;
+  top: 50%;
+  right: -1.2rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+header .box-2 .cnt .stars {
+  font-size: 1.3rem;
+}
+header .box-2 .cnt > img {
+  border-radius: 50%;
+  width: 5rem;
+}
+header .box-2 .cnt img:nth-child(2) {
+  width: 1.8rem;
+}
+header .box-2 .box p:last-child {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+/********************** end header **********************/
+
+/****************** start search section ****************/
+.search form {
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 85%;
+  margin: 0 auto;
+  box-shadow: 0 0 3rem rgb(0 0 0 / 15%);
+}
+.search input[type="search"] {
+  font-size: 2.2rem;
+  padding: 1rem;
+  width: 82%;
+  background-color: white;
+}
+.search input[type="search"]::placeholder {
+  color: var(--description-color);
+}
+.search label {
+  width: 18%;
+  height: 6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  transition: background-color 0.6s;
+}
+.search label:hover {
+  background-color: var(--black-color);
+}
+.search label input[type="submit"] {
+  color: white;
+  font-size: 1.8rem;
+}
+/****************** end search section ******************/
+
+/***************** start about section ******************/
+.About p {
+  letter-spacing: -0.8px;
+  word-spacing: 2px;
+  font-size: 2.5rem;
+  color: var(--description-color);
+  width: 75%;
+  margin: 0 auto 4.5rem;
+  text-align: center;
+}
+.About .container > div:last-of-type {
+  width: 67.5%;
+  gap: 3rem;
+  margin: 0 auto 4rem;
+}
+.About .image {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+}
+.About img {
+  width: 100%;
+  height: 100%;
+  transition-duration: 0.4s;
+}
+.About button {
+  display: block;
+  margin: 0 auto;
+}
+.About button a {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: var(--main-color);
+  padding: 1.9rem 4.2rem;
+  display: inline-block;
+  border-radius: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/****************** end about section *******************/
+
+/**************** start product section *****************/
+
+/****** start first part ********/
+.Product .first h1 {
+  display: inline-block;
+  width: 55%;
+  white-space: nowrap;
+}
+.Product .first ul {
+  display: inline-block;
+  width: fit-content;
+  text-align: end;
+  width: 44%;
+}
+.Product .first ul li {
+  display: inline-block;
+}
+.Product .first li a {
+  color: var(--description-color);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.Product .first li:not(:first-of-type) a {
+  margin-left: 4rem;
+}
+.Product .first .box {
+  gap: 1.2rem 3rem;
+  grid-template-columns: repeat(3, minmax(20rem, 1fr)) 11.4rem;
+  grid-template-rows: 1fr auto;
+}
+.Product .card {
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.8rem;
+}
+.Product .card img {
+  width: 100%;
+  height: 100%;
+}
+.Product .card::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(238, 238, 238, 0.15);
+  transition-duration: 0.2s;
+}
+.Product .card:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.Product .Product .first .box img {
+  width: 100%;
+  aspect-ratio: 1/0.95;
+  border-radius: 1rem;
+}
+.Product .first .box .flex:nth-child(2) {
+  grid-column: 1;
+}
+.Product .first .box .card:nth-child(3) {
+  grid-column: 2;
+  grid-row: 1;
+}
+.Product .first .box .card:nth-child(5) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.Product .first .box h4 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--heading-color);
+}
+.Product .first .box h4 span {
+  color: var(--black-color);
+  font-weight: bold;
+}
+.Product .first .box button a {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: var(--main-color);
+  padding: 1.2rem 3.4rem;
+  border-radius: 0.5rem;
+}
+.Product .first .box .more {
+  grid-column: 4;
+  grid-row: 1;
+  overflow: hidden;
+  background-color: var(--main-color);
+  color: white;
+  position: relative;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+.Product .first .box .more:hover {
+  background-color: var(--black-color);
+}
+.Product .first .box .more span {
+  white-space: nowrap;
+  font-size: 2rem;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.Product .first .box .more span i {
+  color: inherit;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+/******** end first part ******** */
+
+/****** start second part ****** */
+.Product .second {
+  gap: 12rem;
+  padding-right: 7rem;
+  padding-bottom: 0;
+}
+.Product .second .box:first-child,
+.Product .second .box:last-child {
+  flex: 1;
+}
+.Product .second .box:first-child h1 {
+  letter-spacing: 0.5px;
+  word-spacing: 0.6rem;
+}
+.Product .second .box:first-child p {
+  font-size: 1.8rem;
+  color: var(--description-color);
+  margin-bottom: 3.5rem;
+}
+.Product .second .box:last-child {
+  position: relative;
+}
+.Product .second .box:last-child::after {
+  content: "";
+  position: absolute;
+  right: -41.6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 41.6%;
+  height: 64%;
+  background-color: var(--main-color);
+}
+.Product .second .box:last-child img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+/****** end second part ****** */
+/******************** end product section ***************/
+
+/***************** start testimonial section ************/
+.Testimonal .box {
+  align-items: flex-start;
+  gap: 2.2rem;
+}
+.Testimonal .card {
+  background-color: rgba(238, 238, 238, 0.3);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+}
+.Testimonal .box > .card:first-of-type {
+  background-color: var(--main-color);
+}
+.Testimonal .card > i {
+  font-size: 3.4rem;
+  margin-bottom: 3rem;
+}
+.Testimonal p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: var(--description-color);
+  margin-bottom: 3rem;
+}
+.Testimonal .stars {
+  font-size: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+.Testimonal .stars i {
+  color: #e9c217;
+}
+.Testimonal img {
+  width: 5.6rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+.Testimonal .card .flex {
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.Testimonal .box > .card:first-of-type i,
+.Testimonal .box > .card:first-of-type p,
+.Testimonal .box > .card:first-of-type h5,
+.Testimonal .box > .card:first-of-type span {
+  color: white;
+}
+.Testimonal h5 {
+  font-size: 1.6rem;
+  color: var(--black-color);
+  margin-bottom: 0.5rem;
+  font-weight: bolder;
+}
+.Testimonal span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--description-color);
+}
+/***************** end testimonial section ************/
+
+/***************** start contact section ************/
+.Contact form {
+  align-items: stretch;
+  gap: 4rem;
+  padding: 0 14rem;
+}
+.Contact form .box:first-child {
+  flex: 0.8;
+  align-items: flex-start;
+  justify-content: space-around;
+  max-height: 39rem;
+  padding: 2rem 0;
+}
+.Contact i {
+  font-size: 5rem;
+  margin-right: 1rem;
+}
+.Contact h4 {
+  font-size: 2.2rem;
+  margin-bottom: 2px;
+}
+.Contact textarea {
+  min-height: 14.2rem;
+  max-width: 100%;
+  min-width: 100%;
+}
+.Contact input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  font-size: 2rem;
+  padding: 2.2rem 0;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+.Contact h4 ~ input {
+  font-size: 1.8rem;
+  color: var(--description-color);
+}
+.Contact form .box:last-child {
+  gap: 3rem;
+  flex: 1;
+  align-items: stretch;
+  max-width: 52.7%;
+  height: 100%;
+}
+.Contact form .box:last-child input:not(:last-of-type),
+.Contact textarea {
+  font-size: 1.8rem;
+  color: var(--description-color);
+  background-color: rgba(238, 238, 238, 0.5);
+  padding: 2.4rem 1.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid #ddd;
+}
+.Contact .box:last-child input:focus,
+.Contact textarea:focus {
+  outline: 1px solid;
+}
+/***************** end contact section ************/
+
+/***************** start features section ************/
+.Features .container {
+  align-items: stretch;
+  gap: 3.8rem;
+}
+.Features .first {
+  flex: 0.76;
+}
+.Features .first img {
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+.Features img {
+  border-radius: 0.8rem;
+}
+
+.Features .second {
+  flex: 1;
+}
+.Features .second .flex {
+  gap: 2rem;
+}
+.Features .second .flex:first-of-type {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+.Features h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: #222;
+}
+.Features p {
+  font-size: 1.8rem;
+  color: var(--description-color);
+  padding-right: 3rem;
+}
+/***************** end features section ************/
+
+/***************** start subscribe section ************/
+.Subscribe .container {
+  background-color: var(--main-color);
+  border-radius: 2rem;
+  padding: 7rem 0 5.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.6s;
+}
+.Subscribe .container:hover {
+  background-image: unset;
+  background-color: var(--black-color);
+}
+.Subscribe .container::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Subscribe h1 {
+  color: white;
+  font-weight: 500;
+}
+.Subscribe form {
+  background-color: white;
+  padding: 2rem;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 0.6rem;
+}
+.Subscribe input[type="email"] {
+  color: var(--description-color);
+  font-size: 2rem;
+  width: 66%;
+}
+.Subscribe input[type="submit"] {
+  background-color: var(--main-color);
+  padding: 1.6rem 0;
+  width: 33%;
+  border-radius: 0.6rem;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  /* overflow: hidden; */
+}
+/***************** end subscribe section ************/
+
+/***************** start footer section ************/
+footer {
+  border-top: 1px solid #ddd;
+}
+footer .container {
+  align-items: stretch;
+  gap: 10rem;
+  padding: 10rem 4rem 0 0;
+}
+footer .container .flex-column .flex-column {
+  gap: 1rem;
+  align-items: flex-start;
+}
+footer .container > .flex-column {
+  align-items: flex-start;
+  justify-content: unset;
+}
+footer .container > .flex-column:first-child {
+  margin-right: auto;
+  flex-basis: 20rem;
+}
+footer h3 {
+  margin-bottom: 2.5rem;
+}
+footer .container > .flex-column:first-child h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+footer p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--heading-color);
+  margin-bottom: 0.4rem;
+}
+footer a {
+  font-size: 1.5rem;
+  color: var(--description-color);
+  transition-duration: 0.6s;
+  position: relative;
+  overflow: visible;
+  white-space: nowrap;
+}
+footer a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.4px;
+  background-color: var(--black-color);
+  transition-duration: 0.2s;
+}
+footer a:hover {
+  color: var(--black-color);
+}
+footer a:hover::before {
+  width: 100%;
+}
+footer .icons a {
+  display: none;
+}
+footer .icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+footer .icons img {
+  width: 2.5rem;
+}
+footer .icons i {
+  font-size: 2.15rem;
+  padding: 1rem 0 0.8rem;
+  display: inline-block;
+  color: var(--black-color);
+}
+footer .container > .flex-column h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+/***************** end footer section ************/
+.top {
+  position: fixed;
+  top: 90vh;
+  left: 95vw;
+  background-color: var(--main-color);
+  opacity: 0.6;
+  border-radius: 0.6rem;
+  aspect-ratio: 1/1;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 0 1rem 0rem #f7782f;
+  border: 1px solid #eee;
+}
+.top:hover {
+  animation: top 1.5s ease infinite;
+}
+.top i {
+  color: white;
+  font-size: 3rem;
+  display: inline-block;
+}
+@keyframes top {
+  0%,
+  45% {
+    margin-top: 1rem;
+  }
+  30%,
+  100% {
+    margin-top: 0rem;
+  }
+}
