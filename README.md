@@ -1,0 +1,3 @@
+# Project-2
+Here I convert an image design to HTML and CSS code, trying to use best practices and readable code.
+https://ayoub-akraou.github.io/Project-2/
